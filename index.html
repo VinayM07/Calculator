@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .cont {
+   margin: 40px auto 10px ;
+   background-color: rgb(255, 255, 255);
+   max-width: 400px; 
+   box-shadow: 0px 0px 10px 5px rgb(39, 75, 19);
+} 
+#display { 
+    text-align: right;
+    height: 50px;
+    padding:20px;
+    font-size: 30px;
+    border: 0.5px solid black;
+}
+#buttons {
+    display:grid;
+    border-bottom: 1px solid rgb(153, 175, 44);
+    border-left: 1px solid  rgb(127, 12, 133);
+    border-right: 1px solid  rgb(127, 12, 133);
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+}
+#button {
+    border:0.5px solid rgb(97, 133, 12);
+  line-height: 100px; 
+  text-align: center;
+  font-size:25px; 
+  cursor: point; 
+  box-shadow: 0px 0px 8px 0px rgb(97, 198, 43);
+} 
+#button:hover {
+    background-color: rgb(140, 203, 219);
+    transition:0.5s ease-out
+} 
+#equal {
+    text-align: center;
+    line-height: 100px;
+    font-size: 40px;
+    border:0.5px solid rgb(97, 133, 12);
+    box-shadow: 0px 0px 2px 2px rgb(97, 198, 43);
+    
+}
+#clear {
+    text-align: center;
+    line-height: 100px;
+    font-size: 25px;
+    border:0.5px solid rgb(97, 133, 12);
+    box-shadow: 0px 0px 2px 2px rgb(97, 198, 43);
+    
+}
+#sqrt {
+    text-align: center;
+    line-height: 100px;
+    font-size: 25px;
+    border:0.5px solid rgb(97, 133, 12);
+    box-shadow: 0px 0px 2px 2px rgb(97, 198, 43);
+    
+}
+#cancel {
+    text-align: center;
+    line-height: 100px;
+    font-size: 25px;
+    border:0.5px solid rgb(97, 133, 12);
+    box-shadow: 0px 0px 2px 2px rgb(97, 198, 43);
+    
+}
+#cancel:hover {
+    background-color: rgb(140, 203, 219);
+    transition:0.5s ease-out
+} 
+#sqrt:hover {
+    background-color: rgb(140, 203, 219);
+    transition:0.5s ease-out
+} 
+#power:hover {
+    background-color: rgb(140, 203, 219);
+    transition:0.5s ease-out
+} 
+#equal:hover {
+    background-color: rgb(140, 203, 219);
+    transition:0.5s ease-out
+} 
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <link rel="stylesheet" href="h.css">
+</head>
+<body>
+    <div class="cont">
+    <div id ="display"></div> 
+    <div id="buttons">
+    <div id="button">7</div>
+    <div id="button">8</div>
+    <div id="button">9</div>
+    <div id="button">+</div>
+    <div id="button">4</div>
+    <div id="button">5</div>
+    <div id="button">6</div>
+    <div id="button">-</div>
+    <div id="button">1</div>
+    <div id="button">2</div>
+    <div id="button">3</div>
+    <div id="button">*</div>
+    <div id="button">(</div>
+    <div id="button">0</div>
+    <div id="button">)</div>
+    <div id="equal">=</div> 
+    <div id="button">.</div>
+    <div id="sqrt">sqrt</div>
+    <div id="clear">clear</div>
+    <div id="cancel">cancel</div>
+    </div> 
+    </div>
+</div> 
+<script>
+    let d=document.getElementById("display");
+let but=document.querySelectorAll("#button");
+let eq=document.getElementById("equal");
+let sqr=document.getElementById("sqrt");
+let p=document.getElementById("clear");
+let can=document.getElementById("cancel");
+
+but.forEach(element=>{
+    element.addEventListener("click",(e)=>{
+        d.innerText +=element.innerText;
+    });
+});
+eq.addEventListener("click",()=>{
+    d.innerText=eval(d.innerText);
+});
+can.addEventListener("click",()=>{
+    d.innerText=" ";
+});
+sqr.addEventListener("click",()=>{
+    d.innerText=Math.sqrt(d.innerText);
+});
+p.addEventListener("click",()=>{
+    d.innerText=d.innerText.slice(0,-1);
+});
+</script>
+
+</body>
+</html>
